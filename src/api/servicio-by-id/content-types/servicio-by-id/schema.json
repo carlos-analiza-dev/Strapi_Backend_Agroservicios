@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicio_by_ids",
+  "info": {
+    "singularName": "servicio-by-id",
+    "pluralName": "servicio-by-ids",
+    "displayName": "ServicioById"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "incluye": {
+      "type": "component",
+      "component": "shared.incluye-servicios",
+      "repeatable": true,
+      "required": true
+    },
+    "problemas": {
+      "type": "component",
+      "component": "shared.problemas-servicios",
+      "repeatable": true,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "servicios_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::servicios-category.servicios-category",
+      "inversedBy": "categories"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

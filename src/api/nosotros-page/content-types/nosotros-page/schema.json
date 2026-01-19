@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "nosotros_pages",
+  "info": {
+    "singularName": "nosotros-page",
+    "pluralName": "nosotros-pages",
+    "displayName": "Nosotros-Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "minLength": 5,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": true
+    },
+    "trayectoria": {
+      "type": "text",
+      "minLength": 10,
+      "required": true
+    },
+    "mision": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "vision": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "anyo_inicio": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  }
+}

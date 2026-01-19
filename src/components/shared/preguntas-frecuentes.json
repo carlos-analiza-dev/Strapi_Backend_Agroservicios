@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_preguntas_frecuentes",
+  "info": {
+    "displayName": "preguntas-frecuentes"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "valores_nosotros",
+  "info": {
+    "singularName": "valores-nosotro",
+    "pluralName": "valores-nosotros",
+    "displayName": "Valores-Nosotro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_diferencial_cards",
+  "info": {
+    "displayName": "diferencial_card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

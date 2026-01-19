@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diferencials",
+  "info": {
+    "singularName": "diferencial",
+    "pluralName": "diferencials",
+    "displayName": "Diferencial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "diferenciales": {
+      "type": "component",
+      "component": "shared.diferencial-card",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

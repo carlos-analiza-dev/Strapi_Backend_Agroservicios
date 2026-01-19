@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "final_homes",
+  "info": {
+    "singularName": "final-home",
+    "pluralName": "final-homes",
+    "displayName": "FinalHome"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "ctas": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": true
+    }
+  }
+}

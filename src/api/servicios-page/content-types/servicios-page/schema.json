@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "servicios_pages",
+  "info": {
+    "singularName": "servicios-page",
+    "pluralName": "servicios-pages",
+    "displayName": "ServiciosPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "title_description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle_description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    }
+  }
+}

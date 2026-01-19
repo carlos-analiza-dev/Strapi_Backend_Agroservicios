@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuestro_equipos",
+  "info": {
+    "singularName": "nuestro-equipo",
+    "pluralName": "nuestro-equipos",
+    "displayName": "Nuestro-Equipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "cargo": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_soluciones_servicios",
+  "info": {
+    "displayName": "soluciones_servicios"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

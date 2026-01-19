@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "soluciones_industrias",
+  "info": {
+    "singularName": "soluciones-industria",
+    "pluralName": "soluciones-industrias",
+    "displayName": "SolucionesIndustria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "categorias": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_problemas_servicios",
+  "info": {
+    "displayName": "problemas_servicios"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
