@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industrias_cards",
+  "info": {
+    "singularName": "industrias-card",
+    "pluralName": "industrias-cards",
+    "displayName": "Industrias-Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    }
+  }
+}

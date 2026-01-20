@@ -725,6 +725,42 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIndustriasCardIndustriasCard
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'industrias_cards';
+  info: {
+    displayName: 'Industrias-Card';
+    pluralName: 'industrias-cards';
+    singularName: 'industrias-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 5;
+      }>;
+    image: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industrias-card.industrias-card'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInicioInicio extends Struct.SingleTypeSchema {
   collectionName: 'inicios';
   info: {
@@ -906,6 +942,10 @@ export interface ApiServicioByIdServicioById
       Schema.Attribute.Required;
     incluye: Schema.Attribute.Component<'shared.incluye-servicios', true> &
       Schema.Attribute.Required;
+    industrias_id: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::industrias-card.industrias-card'
+    >;
     isActive: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
@@ -921,6 +961,10 @@ export interface ApiServicioByIdServicioById
     servicios_category: Schema.Attribute.Relation<
       'manyToOne',
       'api::servicios-category.servicios-category'
+    >;
+    soluciones_by_id: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::soluciones-by-id.soluciones-by-id'
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1036,6 +1080,142 @@ export interface ApiServiciosPageServiciosPage extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 5;
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolucionByIdPageSolucionByIdPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'solucion_by_id_pages';
+  info: {
+    displayName: 'SolucionBYId-Page';
+    pluralName: 'solucion-by-id-pages';
+    singularName: 'solucion-by-id-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta-button', false> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 5;
+      }>;
+    Flujo: Schema.Attribute.JSON & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
+    industrias_card: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::industrias-card.industrias-card'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solucion-by-id-page.solucion-by-id-page'
+    > &
+      Schema.Attribute.Private;
+    Problemas: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    servicio_by_ids: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-by-id.servicio-by-id'
+    >;
+    Soluciones: Schema.Attribute.JSON & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolucionIndustriaSolucionIndustria
+  extends Struct.SingleTypeSchema {
+  collectionName: 'solucion_industrias';
+  info: {
+    displayName: 'Solucion-Industria';
+    pluralName: 'solucion-industrias';
+    singularName: 'solucion-industria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta-button', true> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 5;
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solucion-industria.solucion-industria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolucionesByIdSolucionesById
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'soluciones_by_ids';
+  info: {
+    displayName: 'SolucionesById';
+    pluralName: 'soluciones-by-ids';
+    singularName: 'soluciones-by-id';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta-button', true> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 5;
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    industrias_card: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::industrias-card.industrias-card'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::soluciones-by-id.soluciones-by-id'
+    > &
+      Schema.Attribute.Private;
+    Problemas: Schema.Attribute.JSON & Schema.Attribute.Required;
+    Procesos: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    servicio_by_ids: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-by-id.servicio-by-id'
+    >;
+    Soluciones: Schema.Attribute.JSON & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1630,6 +1810,7 @@ declare module '@strapi/strapi' {
       'api::diferencial.diferencial': ApiDiferencialDiferencial;
       'api::final-home.final-home': ApiFinalHomeFinalHome;
       'api::global.global': ApiGlobalGlobal;
+      'api::industrias-card.industrias-card': ApiIndustriasCardIndustriasCard;
       'api::inicio.inicio': ApiInicioInicio;
       'api::nosotros-page.nosotros-page': ApiNosotrosPageNosotrosPage;
       'api::nuestro-equipo.nuestro-equipo': ApiNuestroEquipoNuestroEquipo;
@@ -1638,6 +1819,9 @@ declare module '@strapi/strapi' {
       'api::servicios-category.servicios-category': ApiServiciosCategoryServiciosCategory;
       'api::servicios-home.servicios-home': ApiServiciosHomeServiciosHome;
       'api::servicios-page.servicios-page': ApiServiciosPageServiciosPage;
+      'api::solucion-by-id-page.solucion-by-id-page': ApiSolucionByIdPageSolucionByIdPage;
+      'api::solucion-industria.solucion-industria': ApiSolucionIndustriaSolucionIndustria;
+      'api::soluciones-by-id.soluciones-by-id': ApiSolucionesByIdSolucionesById;
       'api::soluciones-industria.soluciones-industria': ApiSolucionesIndustriaSolucionesIndustria;
       'api::valores-nosotro.valores-nosotro': ApiValoresNosotroValoresNosotro;
       'plugin::content-releases.release': PluginContentReleasesRelease;

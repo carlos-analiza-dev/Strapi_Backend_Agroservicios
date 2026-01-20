@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "solucion_by_id_pages",
+  "info": {
+    "singularName": "solucion-by-id-page",
+    "pluralName": "solucion-by-id-pages",
+    "displayName": "SolucionBYId-Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "Problemas": {
+      "type": "json",
+      "required": true
+    },
+    "Soluciones": {
+      "type": "json",
+      "required": true
+    },
+    "Flujo": {
+      "type": "json",
+      "required": true
+    },
+    "servicio_by_ids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::servicio-by-id.servicio-by-id"
+    },
+    "industrias_card": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::industrias-card.industrias-card"
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

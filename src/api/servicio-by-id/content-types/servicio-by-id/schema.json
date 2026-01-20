@@ -53,6 +53,17 @@
         "videos",
         "audios"
       ]
+    },
+    "industrias_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::industrias-card.industrias-card"
+    },
+    "soluciones_by_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::soluciones-by-id.soluciones-by-id",
+      "inversedBy": "servicio_by_ids"
     }
   }
 }

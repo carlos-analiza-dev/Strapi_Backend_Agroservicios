@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "solucion_industrias",
+  "info": {
+    "singularName": "solucion-industria",
+    "pluralName": "solucion-industrias",
+    "displayName": "Solucion-Industria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "soluciones_by_ids",
+  "info": {
+    "singularName": "soluciones-by-id",
+    "pluralName": "soluciones-by-ids",
+    "displayName": "SolucionesById"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 5,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Problemas": {
+      "type": "json",
+      "required": true
+    },
+    "Soluciones": {
+      "type": "json",
+      "required": true
+    },
+    "Procesos": {
+      "type": "json",
+      "required": true
+    },
+    "servicio_by_ids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::servicio-by-id.servicio-by-id",
+      "mappedBy": "soluciones_by_id"
+    },
+    "industrias_card": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::industrias-card.industrias-card"
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta-button",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

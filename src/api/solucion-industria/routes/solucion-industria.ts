@@ -1,0 +1,7 @@
+/**
+ * solucion-industria router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::solucion-industria.solucion-industria');
